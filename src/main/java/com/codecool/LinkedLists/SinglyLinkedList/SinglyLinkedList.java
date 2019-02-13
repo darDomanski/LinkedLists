@@ -5,6 +5,7 @@ public class SinglyLinkedList<T> {
     private int length = 0;
 
     public void add(T data) {
+        if (data == null) throw new IllegalArgumentException("Can't add null to list!");
         Node<T> current = head;
         Node<T> newNode = new Node<T>(data);
 
@@ -22,6 +23,7 @@ public class SinglyLinkedList<T> {
 
     public T get(int index) {
         if (index < 0 || index >= length) throw new IllegalArgumentException("Wrong index given!");
+        if (head == null) throw new IllegalArgumentException("Can't retrieve any data - list is empty!");
 
         Node<T> current = head;
         int counter = -1;
@@ -40,6 +42,7 @@ public class SinglyLinkedList<T> {
 
     public void insert(int index, T data) {
         if (index < 0 || index > length) throw new IllegalArgumentException("Wrong index given!");
+        if (data == null) throw new IllegalArgumentException("Can't insert null to list!");
 
         Node<T> previous = null;
         Node<T> current = head;
@@ -86,5 +89,19 @@ public class SinglyLinkedList<T> {
             }
             length--;
         }
+    }
+
+    @Override
+    public String toString() {
+        String listToString = "";
+        Node<T> current = head;
+
+        while (current.getNext() != null) {
+            listToString += " " + current.getData().toString();
+            current = current.getNext();
+        }
+        listToString += " " + current.getData().toString();
+
+        return listToString;
     }
 }
