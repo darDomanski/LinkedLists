@@ -1,6 +1,6 @@
 package com.codecool.LinkedLists.DoublyLinkedList;
 
-public class Node<T> {
+class Node<T> {
     private Node<T> previous;
     private T data;
     private Node<T> next;
