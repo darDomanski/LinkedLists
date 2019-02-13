@@ -1,7 +1,0 @@
-package com.codecool.LinkedLists;
-
-import static org.junit.jupiter.api.Assertions.*;
-
-class DoublyLinkedListTest {
-
-}
