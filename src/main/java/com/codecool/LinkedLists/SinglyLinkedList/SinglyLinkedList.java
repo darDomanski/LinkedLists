@@ -1,22 +1,22 @@
 package com.codecool.LinkedLists.SinglyLinkedList;
 
 public class SinglyLinkedList<T> {
-    private Node<T> head;
+    private SinglyLinkedNode<T> head;
     private int length = 0;
 
     public void add(T data) {
         if (data == null) throw new IllegalArgumentException("Can't add null to list!");
-        Node<T> current = head;
-        Node<T> newNode = new Node<T>(data);
+        SinglyLinkedNode<T> current = head;
+        SinglyLinkedNode<T> newSinglyLinkedNode = new SinglyLinkedNode<T>(data);
 
         if (head == null) {
-            head = newNode;
+            head = newSinglyLinkedNode;
 
         } else {
             while (current.getNext() != null) {
                 current = current.getNext();
             }
-            current.setNext(newNode);
+            current.setNext(newSinglyLinkedNode);
         }
         length++;
     }
@@ -25,7 +25,7 @@ public class SinglyLinkedList<T> {
         if (index < 0 || index >= length) throw new IllegalArgumentException("Wrong index given!");
         if (head == null) throw new IllegalArgumentException("Can't retrieve any data - list is empty!");
 
-        Node<T> current = head;
+        SinglyLinkedNode<T> current = head;
         int counter = -1;
 
         while (counter != index) {
@@ -44,15 +44,15 @@ public class SinglyLinkedList<T> {
         if (index < 0 || index > length) throw new IllegalArgumentException("Wrong index given!");
         if (data == null) throw new IllegalArgumentException("Can't insert null to list!");
 
-        Node<T> previous = null;
-        Node<T> current = head;
-        Node<T> newNode = new Node<T>(data);
+        SinglyLinkedNode<T> previous = null;
+        SinglyLinkedNode<T> current = head;
+        SinglyLinkedNode<T> newSinglyLinkedNode = new SinglyLinkedNode<T>(data);
         int counter = 0;
 
         if (index == 0) {
 
-            newNode.setNext(current);
-            head = newNode;
+            newSinglyLinkedNode.setNext(current);
+            head = newSinglyLinkedNode;
 
         } else {
 
@@ -62,15 +62,15 @@ public class SinglyLinkedList<T> {
                 counter++;
             }
 
-            previous.setNext(newNode);
-            newNode.setNext(current);
+            previous.setNext(newSinglyLinkedNode);
+            newSinglyLinkedNode.setNext(current);
         }
 
         length++;
     }
 
     public void remove(T data) {
-        Node<T> current = head;
+        SinglyLinkedNode<T> current = head;
 
         if (current != null) {
 
@@ -94,7 +94,7 @@ public class SinglyLinkedList<T> {
     @Override
     public String toString() {
         String listToString = "";
-        Node<T> current = head;
+        SinglyLinkedNode<T> current = head;
 
         while (current.getNext() != null) {
             listToString += " " + current.getData().toString();
