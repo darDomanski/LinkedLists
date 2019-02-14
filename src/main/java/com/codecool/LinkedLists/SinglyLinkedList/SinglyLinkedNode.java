@@ -1,14 +1,14 @@
 package com.codecool.LinkedLists.SinglyLinkedList;
 
-class Node<T> {
-    private Node<T> next;
+class SinglyLinkedNode<T> {
+    private SinglyLinkedNode<T> next;
     private T data;
 
-    public Node(T data) {
+    public SinglyLinkedNode(T data) {
         this.data = data;
     }
 
-    public Node<T> getNext() {
+    public SinglyLinkedNode<T> getNext() {
         return next;
     }
 
@@ -16,7 +16,7 @@ class Node<T> {
         return data;
     }
 
-    public void setNext(Node<T> next) {
+    public void setNext(SinglyLinkedNode<T> next) {
         this.next = next;
     }
 

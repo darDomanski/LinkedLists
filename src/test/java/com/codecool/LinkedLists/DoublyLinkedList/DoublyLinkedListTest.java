@@ -113,10 +113,10 @@ class DoublyLinkedListTest {
     @Test
     void testInsertingToTheEndOfListContainingObjects() {
         DoublyLinkedList<String> doublyLinkedList = createTestList();
-        doublyLinkedList.insert(3, "dog");
+        doublyLinkedList.insert(2, "dog");
         String listToString = doublyLinkedList.toString();
 
-        String expected = " mam pap cat dog";
+        String expected = " mam pap dog cat";
 
         assertEquals(expected, listToString);
     }
